@@ -16,14 +16,10 @@ public class MemberService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    var member = mapper.findById(username);
-    if (member.isPresent()) {
-      return new MemberDetails(member.get());
-    } else {
-      new UsernameNotFoundException(username + "not found");
-      return null;
-    }
-
+    var member = mapper.findById(username).orElseGet(() -> {
+      throw new UsernameNotFoundException(username + "not found");
+    });
+    return new MemberDetails(member);
   }
 
 }

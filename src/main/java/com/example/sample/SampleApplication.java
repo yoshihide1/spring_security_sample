@@ -1,7 +1,5 @@
 package com.example.sample;
 
-import java.util.ArrayList;
-
 import com.example.sample.sample_program.Armor;
 import com.example.sample.sample_program.Weapon;
 import com.example.sample.sample_program.Item;
