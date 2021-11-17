@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spring security sample</title>
+</head>
+
+<body>
+  <h1>Hello World!!</h1>
+  <a th:href="@{/logout}">ログアウト</a>
+  <div th:each=" todo : ${todoList}">
+    <h3 th:text="|ID${todo.id}|"></h3>
+    <h1 th:text="|memo${todo.memo}|"></h1>
+    <h4 th:text="|状態${todo.isDone}|"></h4>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper
+	namespace="com.example.sample.repository.TodoRepository">
+  <insert id="insert">
+    insert into todo (memo, is_done)
+    values("${memo}", 1);
+  </insert>
+  <select id="findAll" resultType="com.example.sample.entity.TodoEntity">
+    select * from TODO
+  </select>
+  <delete id="remove">
+    delete from todo where = ${id}
+  </delete>
+
+  <update id="done">
+   update todo
+   set is_done = ${isDone}
+   where id = ${id} 
+  </update>
+
+</mapper>
